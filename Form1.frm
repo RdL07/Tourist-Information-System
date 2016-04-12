@@ -24,9 +24,19 @@ Begin VB.Form Form1
    Begin VB.Menu e 
       Caption         =   "My Plan"
    End
+   Begin VB.Menu f 
+      Caption         =   "Tour Planner"
+   End
 End
 Attribute VB_Name = "Form1"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub c_Click()
+
+End Sub
+
+Private Sub f_Click()
+
+End Sub

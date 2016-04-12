@@ -10,7 +10,7 @@ Begin VB.Form Form1
    ScaleWidth      =   9090
    StartUpPosition =   3  'Windows Default
    Begin VB.Menu a 
-      Caption         =   "Search"
+      Caption         =   "&Search"
    End
    Begin VB.Menu b 
       Caption         =   "Add User"

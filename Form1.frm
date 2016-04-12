@@ -19,7 +19,7 @@ Begin VB.Form Form1
       Caption         =   "Edit Info"
    End
    Begin VB.Menu d 
-      Caption         =   "Sign In"
+      Caption         =   "Log In"
    End
    Begin VB.Menu e 
       Caption         =   "My Plan"
@@ -33,10 +33,3 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub c_Click()
-
-End Sub
-
-Private Sub f_Click()
-
-End Sub

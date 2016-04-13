@@ -19,10 +19,13 @@ Begin VB.Form Form1
       Caption         =   "Edit Info"
    End
    Begin VB.Menu d 
-      Caption         =   "Sign In"
+      Caption         =   "Log In"
    End
    Begin VB.Menu e 
       Caption         =   "My Plan"
+   End
+   Begin VB.Menu f 
+      Caption         =   "Tour Planner"
    End
 End
 Attribute VB_Name = "Form1"

@@ -10,7 +10,7 @@ Begin VB.Form Form1
    ScaleWidth      =   9090
    StartUpPosition =   3  'Windows Default
    Begin VB.Menu a 
-      Caption         =   "Search"
+      Caption         =   "&Search"
    End
    Begin VB.Menu b 
       Caption         =   "Add User"
@@ -33,3 +33,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub a_Click()
+Form2.Show
+End Sub

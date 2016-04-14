@@ -36,3 +36,7 @@ Attribute VB_Exposed = False
 Private Sub a_Click()
 Form2.Show
 End Sub
+
+Private Sub b_Click()
+AddUser.Show
+End Sub

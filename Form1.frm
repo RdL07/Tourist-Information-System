@@ -9,6 +9,14 @@ Begin VB.Form Form1
    ScaleHeight     =   4080
    ScaleWidth      =   9090
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command1 
+      Caption         =   "Display"
+      Height          =   615
+      Left            =   600
+      TabIndex        =   0
+      Top             =   480
+      Width           =   2295
+   End
    Begin VB.Menu a 
       Caption         =   "&Search"
    End
@@ -39,4 +47,12 @@ End Sub
 
 Private Sub b_Click()
 AddUser.Show
+End Sub
+
+Private Sub Command1_Click()
+Display.Show
+End Sub
+
+Private Sub e_Click()
+
 End Sub

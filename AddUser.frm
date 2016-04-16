@@ -42,12 +42,80 @@ Begin VB.Form AddUser
       Top             =   600
       Width           =   5295
    End
+   Begin VB.Label Label1 
+      Caption         =   "Label1"
+      Height          =   15
+      Left            =   1800
+      TabIndex        =   4
+      Top             =   720
+      Width           =   15
+   End
 End
 Attribute VB_Name = "AddUser"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Dim cn As New ADODB.Connection
+Dim rs As New ADODB.Recordset
+Dim str As String
+Dim strsql1 As String
+Dim pid As Integer
+Private Sub Command1_Click()
+str = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Sourish\Desktop\Tourist-Information-System\Database4.mdb;Persist Security Info=False"
+cn.ConnectionString = str
+cn.Open
+rs.ActiveConnection = cn
+rs.CursorType = adOpenDynamic
+rs.LockType = adLockOptimistic
+rs.Source = "Table2"
+strsql1 = "select * from Table2 where UNAME LIKE '%" & Text1.Text & "%'"
+rs.Open strsql1
+
+With rs
+    If Text2.Text = Text3.Text Then
+    If .EOF Then
+     GoTo eh1246
+    ElseIf Text1.Text = !UNAME Then
+        MsgBox ("Username Taken")
+            Text1.Text = ""
+            Text2.Text = ""
+            Text3.Text = ""
+   
+   End If
+   
+    If 1 = 2 Then
+    
+eh1246: rs.Close
+        cn.Close
+        cn.Open
+        rs.ActiveConnection = cn
+        rs.CursorType = adOpenDynamic
+        rs.LockType = adLockOptimistic
+        rs.Source = "Table2"
+        rs.Open
+        
+             rs.AddNew
+             rs.Fields("UNAME").Value = Text1.Text
+             rs.Fields("PASSWORD").Value = Text2.Text
+            rs.Fields("ADMIN").Value = 0
+            rs.Update
+             MsgBox ("Success")
+             AddUser.Hide
+             SignIn.Show
+             
+         Else
+            MsgBox ("Please Reenter the Password")
+            Text1.Text = ""
+            Text2.Text = ""
+            Text3.Text = ""
+        End If
+    End If
+    End With
+    rs.Close
+    cn.Close
+End Sub
+
 Private Sub Text1_Click()
 Text1.Text = ""
 End Sub
@@ -83,3 +151,4 @@ If Text3.Text = "" Then
     Text3.Text = "Re enter Password"
 End If
 End Sub
+
